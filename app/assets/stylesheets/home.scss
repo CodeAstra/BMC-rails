@@ -1,0 +1,38 @@
+#land {
+  height: 100vh;
+  width: 100%;
+  background-image: image-url('land.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  h1 {
+    font-size: 7vw;
+    margin: 6vh 0 10vh;
+  }
+
+  a {
+    &, &:visited, &:active, &:link {
+      background-color: #0177B5;
+      transition: background-color 0.3s ease-in;
+    }
+
+    &:hover {
+      background-color: darken(#0177B5, 10%);
+    }
+  }
+
+  .disclaimer {
+    font-size: 0.7em;
+    margin-top: 1em;
+  }
+
+  p {
+    font-size: 1.5vw;
+    margin-top: 20vh;
+  }
+}
