@@ -12,6 +12,9 @@
 #  last_sign_in_ip     :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  provider            :string
+#  uid                 :string
+#  image               :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

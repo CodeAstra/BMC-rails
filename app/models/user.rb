@@ -12,6 +12,9 @@
 #  last_sign_in_ip     :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  provider            :string
+#  uid                 :string
+#  image               :string
 #
 
 class User < ActiveRecord::Base
@@ -26,7 +29,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       # user.password = Devise.friendly_token[0,20]
       # user.name = auth.info.name   # assuming the user model has a name
-      # user.image = auth.info.image # assuming the user model has an image
+      user.image = auth.info.image # assuming the user model has an image
     end
   end
 
