@@ -15,6 +15,7 @@
 #  provider            :string
 #  uid                 :string
 #  image               :string
+#  name                :string
 #
 
 class User < ActiveRecord::Base
@@ -23,6 +24,8 @@ class User < ActiveRecord::Base
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
   devise :rememberable, :trackable, :omniauthable, :omniauth_providers => [:linkedin]
+
+  has_many :charts, foreign_key: :owner_id
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

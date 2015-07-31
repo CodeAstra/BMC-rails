@@ -1,0 +1,28 @@
+$chart-background-1: #e67e22;
+$chart-background-2: #2ecc71;
+$chart-background-3: #3498db;
+$chart-background-4: #34495e;
+$chart-background-5: #e74c3c;
+$chart-background-6: #7f8c8d;
+$chart-backgrounds: $chart-background-1, $chart-background-2, $chart-background-3, $chart-background-4, $chart-background-5, $chart-background-6;
+
+#charts {
+  .chart {
+    height: 10em;
+    color: $light-font-color;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 15px 0;
+
+    @for $i from 1 through length($chart-backgrounds) {
+      &.chart-#{$i} {
+        background-color: nth($chart-backgrounds, $i);
+      }
+    }
+
+    &.new_chart {
+      background-color: #1abc9c;
+    }
+  }
+}

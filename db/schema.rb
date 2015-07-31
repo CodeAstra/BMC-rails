@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731075936) do
+ActiveRecord::Schema.define(version: 20150731094511) do
+
+  create_table "charts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "customer_segments"
+    t.text     "value_propositions"
+    t.text     "customer_relationships"
+    t.text     "channels"
+    t.text     "key_activities"
+    t.text     "key_resources"
+    t.text     "key_partnerships"
+    t.text     "cost_structure"
+    t.text     "revenue_streams"
+    t.integer  "owner_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "charts", ["owner_id"], name: "index_charts_on_owner_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
