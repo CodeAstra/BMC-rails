@@ -1,4 +1,4 @@
 $ ->
-  $('#profile-pic-container').click ->
-      $('#user_details').toggleClass('hidden')
-      $('#profile-pic-container').toggleClass('active')
+  $('.footer-dropup-trigger').click ->
+    $(@.dataset.target).toggleClass('hidden')
+    @.toggleClass('active')

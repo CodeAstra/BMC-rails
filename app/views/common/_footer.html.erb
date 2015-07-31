@@ -1,9 +1,12 @@
 <footer class="navbar-fixed-bottom">
-  <div id="brand-pic-container" class="pull-left">
+  <div id="brand-pic-container" class="footer-dropup-trigger pull-left" data-target="#brand-details">
     <%= image_tag "codeastra", id: "brand-pic", class: "img-circle" %>
   </div>
+  <div id="brand-details" class="hidden">
+    Business Model Canvas
+  </div>
 
-  <div id="profile-pic-container" class="pull-right">
+  <div id="profile-pic-container" class="footer-dropup-trigger pull-right" data-target="#user_details">
     <%= image_tag current_user.image, id: 'profile-pic', class: "img-circle" %>
   </div>
   <div id="user_details" class="hidden">
