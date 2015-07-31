@@ -1,0 +1,14 @@
+<footer class="navbar-fixed-bottom">
+  <div id="brand-pic-container" class="pull-left">
+    <%= image_tag "codeastra", id: "brand-pic", class: "img-circle" %>
+  </div>
+
+  <div id="profile-pic-container" class="pull-right">
+    <%= image_tag current_user.image, id: 'profile-pic', class: "img-circle" %>
+  </div>
+  <div id="user_details" class="hidden">
+    Loggedin as <br>
+    <%= current_user.email %> <br>
+    <%= link_to fa_icon('sign-out', text: 'Logout'), destroy_user_session_path, method: :delete %>
+  </div>
+</footer>
