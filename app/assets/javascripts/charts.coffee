@@ -7,3 +7,7 @@ $ ->
     $('.new_chart_container').removeClass('hover')
     false
 
+  $('#charts .flip-container.chart-slide').click ->
+    console.log @.dataset.target
+    $(@.dataset.target)[0].click()
+

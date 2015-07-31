@@ -1,4 +1,5 @@
-<div class="flip-container">
+<% show_link_id = "show-chart-link-#{chart.id}" %>
+<div class="flip-container chart-slide" data-target="#<%= show_link_id %>">
   <div class="flipper">
     <% chart_cycle_class = "chart-#{cycle(1, 2, 3, 4, 5, 6)}" %>
     <article class='front chart <%= chart_cycle_class %>'>
@@ -14,3 +15,4 @@
     </article>
   </div>
 </div>
+<%= link_to "View", chart_path(chart), id: show_link_id, class: "hidden" %>
