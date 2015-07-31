@@ -29,9 +29,27 @@ footer {
   #user_details, #brand-details {
     position: absolute;
     bottom: 50px;
+    max-width: 30em;
     background-color: $darker-bg-color;
     color: $light-font-color;
     padding: 15px 40px;
+
+    a {
+      &, &:hover, &:visited, &:active, &:link {
+        color: $light-font-color;
+        text-decoration: none;
+      }
+
+      .fa {
+        transition: all 0.5s ease-in;
+      }
+
+      &:hover {
+        .fa {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
 
   #user_details {
