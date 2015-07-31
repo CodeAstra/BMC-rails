@@ -1,0 +1,6 @@
+<%= simple_form_for @new_chart do |f| %>
+  <%= f.input :title, label: false, placeholder: "Title of the Business Idea" %>
+  <%= f.input :description, label: false, placeholder: "Describe the idea" %>
+  <%= f.submit "Create", class: "btn", data: {'disable-with' => "Please Wait"} %>
+  <%= link_to "cancel", "#", class: "cancel" %>
+<% end %>

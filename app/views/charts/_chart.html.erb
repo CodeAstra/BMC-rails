@@ -1,0 +1,16 @@
+<div class="flip-container">
+  <div class="flipper">
+    <% chart_cycle_class = "chart-#{cycle(1, 2, 3, 4, 5, 6)}" %>
+    <article class='front chart <%= chart_cycle_class %>'>
+      <div class="vcenter">
+        <%= chart.title %>
+      </div>
+    </article>
+    <article class='back chart <%= chart_cycle_class %>'>
+      <div class="vcenter">
+        <h3><%= chart.title %></h3>
+        <p><%= chart.description %></p>
+      </div>
+    </article>
+  </div>
+</div>
