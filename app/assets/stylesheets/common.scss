@@ -63,6 +63,34 @@ footer {
   #brand-details {
     left: 15px;
   }
+
+  .breadcrumb {
+    background-color: transparent;
+    font-size: 20px;
+    margin: 5px 0;
+    float: left;
+
+    li {
+      color: $light-font-color;
+      font-weight: 300;
+
+      &:before {
+        color: $light-font-color;
+      }
+
+      a {
+        &, &:hover, &:visited, &:active, &:link {
+          color: $light-font-color;
+          font-weight: 400;
+          text-decoration: none;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .vcenter {

@@ -10,6 +10,13 @@
     </p>
   </div>
 
+  <ol class="breadcrumb">
+    <% unless charts_index_page? %>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= @chart.title %></li>
+    <% end %>
+  </ol>
+
   <div id="profile-pic-container" class="footer-dropup-trigger pull-right" data-target="#user_details">
     <%= image_tag current_user.image, id: 'profile-pic', class: "img-circle" %>
   </div>

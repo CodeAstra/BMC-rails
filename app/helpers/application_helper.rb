@@ -18,4 +18,12 @@ module ApplicationHelper
       end + msg
     end
   end
+
+  def charts_index_page?
+    controller_name == "charts" && action_name == "index"
+  end
+
+  def chart_show_page?
+    controller_name == "charts" && action_name == "show"
+  end
 end
