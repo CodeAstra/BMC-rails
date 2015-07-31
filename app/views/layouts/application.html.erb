@@ -13,6 +13,6 @@
   <%= flash_tag(alert, "alert") %>
 </div>
 <%= yield %>
-<%= render 'common/footer' %>
+<%= render('common/footer') unless @landing_page %>
 </body>
 </html>
