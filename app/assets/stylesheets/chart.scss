@@ -1,0 +1,54 @@
+#chart {
+  header  {
+    margin: 0 -15px;
+  }
+
+  #key-partnerships, #value-propositions, #customer-segments {
+    height: 60vh;
+  }
+
+  #key-activities, #key-resources, #customer-relationships, #channels {
+    height: 30vh;
+    margin: 0 -15px;
+  }
+
+  #cost-structure, #revenue-streams {
+    height: 20vh;
+  }
+
+  #key-partnerships {
+    background-color: lighten(#1abc9c, 30%);
+  }
+
+  #key-activities {
+    background-color: lighten(#3498db, 30%);
+  }
+
+  #key-resources {
+    background-color: lighten(#34495e, 30%);
+  }
+
+  #value-propositions {
+    background-color: lighten(#f39c12, 30%);
+  }
+
+  #customer-relationships {
+    background-color: lighten(#c0392b, 30%);
+  }
+
+  #channels {
+    background-color: lighten(#7f8c8d, 30%);
+  }
+
+  #customer-segments {
+    background-color: lighten(#34495e, 30%);
+  }
+
+  #cost-structure {
+    background-color: lighten(#3498db, 20%);
+  }
+
+  #revenue-streams {
+    background-color: lighten(#c0392b, 20%);
+  }
+}
