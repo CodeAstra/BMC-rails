@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
-      <h1 id="title"><%= @chart.title %></h1>
+      <h1 id="title"><%= best_in_place @chart, :title %></h1>
       <p id="description">
-        <%= @chart.description %>
+        <%= best_in_place @chart, :description, as: :textarea %>
       </p>
     </div>
     <div class="col-xs-1"></div>

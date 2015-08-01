@@ -21,6 +21,11 @@ class ChartsController < ApplicationController
 
   def update
     @chart.update_attributes(chart_update_params)
+
+    respond_to do |format|
+      format.js { render 'update' }
+      format.json { respond_with_bip(@chart) }
+    end
   end
 
 private
@@ -30,6 +35,8 @@ private
 
   def chart_update_params
     params.require(:chart).permit(
+      :title,
+      :description,
       :customer_segments, 
       :value_propositions, 
       :customer_relationships, 
