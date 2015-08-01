@@ -17,7 +17,7 @@
         <div class="modal-body">
           <p>Describe your <%= col_name.to_s.titleize %>:</p>
           <%= simple_form_for @chart, remote: true do |f| %>
-            <%= f.input col_name, label: false %>
+            <%= f.input col_name, label: false, :as => :ckeditor %>
             <%= f.submit "Save", class: "btn btn-primary" %>
           <% end %>
         </div>

@@ -1,3 +1,3 @@
 <% col_name = params[:chart].keys.first %>
 $('.modal').modal('hide');
-$('#<%= col_name %> p.content').html('<%= j @chart.send(col_name) %>');
+$('#<%= col_name %> .content').html('<%= j raw(@chart.send(col_name)) %>');
