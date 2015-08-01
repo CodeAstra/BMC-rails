@@ -1,0 +1,27 @@
+<% [:customer_segments, 
+      :value_propositions, 
+      :customer_relationships, 
+      :channels, 
+      :key_activities, 
+      :key_resources, 
+      :key_partnerships, 
+      :cost_structure, 
+      :revenue_streams].each do |col_name| %>
+  <div class="modal fade canvas-modal" id="<%= col_name.to_s %>-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><%= fa_icon "times-circle" %></span></button>
+          <h4 class="modal-title"><%= col_name.to_s.titleize %></h4>
+        </div>
+        <div class="modal-body">
+          <p>Describe your <%= col_name.to_s.titleize %>:</p>
+          <%= simple_form_for @chart, remote: true do |f| %>
+            <%= f.input col_name, label: false %>
+            <%= f.submit "Save", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

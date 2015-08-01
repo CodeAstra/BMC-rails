@@ -6,43 +6,51 @@
   .canvas-box {
     border: 1px solid transparent;
     padding: 15px;
+    position: relative;
 
     h4 {
       font-size: 1em;
       margin: 0;
     }
+
+    a.modal-trigger {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      color: $dark-font-color;
+    }
   }
 
-  #key-partnerships, #value-propositions, #customer-segments {
+  #key_partnerships, #value_propositions, #customer_segments {
     height: 60vh;
   }
 
-  #key-activities, #key-resources, #customer-relationships, #channels {
+  #key_activities, #key_resources, #customer_relationships, #channels {
     height: 30vh;
     margin: 0 -15px;
   }
 
-  #cost-structure, #revenue-streams {
+  #cost_structure, #revenue_streams {
     height: 20vh;
   }
 
-  #key-partnerships {
+  #key_partnerships {
     background-color: lighten(#1abc9c, 30%);
   }
 
-  #key-activities {
+  #key_activities {
     background-color: lighten(#3498db, 30%);
   }
 
-  #key-resources {
+  #key_resources {
     background-color: lighten(#34495e, 30%);
   }
 
-  #value-propositions {
+  #value_propositions {
     background-color: lighten(#f39c12, 30%);
   }
 
-  #customer-relationships {
+  #customer_relationships {
     background-color: lighten(#c0392b, 30%);
   }
 
@@ -50,15 +58,21 @@
     background-color: lighten(#7f8c8d, 30%);
   }
 
-  #customer-segments {
+  #customer_segments {
     background-color: lighten(#34495e, 30%);
   }
 
-  #cost-structure {
+  #cost_structure {
     background-color: lighten(#3498db, 20%);
   }
 
-  #revenue-streams {
+  #revenue_streams {
     background-color: lighten(#c0392b, 20%);
+  }
+
+  .canvas-modal {
+    button.close {
+      color: $dark-font-color;
+    }
   }
 }
