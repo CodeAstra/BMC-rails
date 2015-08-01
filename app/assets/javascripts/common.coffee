@@ -1,4 +1,4 @@
 $ ->
-  $('.footer-dropup-trigger').click ->
+  $('.header-dropdown-trigger').click ->
     $(@.dataset.target).toggleClass('hidden')
     $(@).toggleClass('active')

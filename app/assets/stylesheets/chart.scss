@@ -1,6 +1,6 @@
 #chart {
-  header  {
-    margin: 0 -15px;
+  #title, #description {
+    margin-left: -15px;
   }
 
   .canvas-box {
@@ -29,6 +29,15 @@
       bottom: 15px;
       right: 15px;
       color: $dark-font-color;
+      visibility: hidden;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:hover a.modal-trigger {
+      visibility: visible;
     }
 
     ol, ul {

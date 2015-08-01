@@ -3,12 +3,13 @@ body {
   color: $dark-font-color;
 }
 
-footer {
+header {
   background-color: $dark-bg-color;
   color: $light-font-color;
   height: 50px;
   padding: 0 15px;
   box-sizing: border-box;
+  overflow: hidden;
 
 
   #profile-pic-container, #brand-pic-container {
@@ -33,11 +34,12 @@ footer {
 
   #user_details, #brand-details {
     position: absolute;
-    bottom: 50px;
+    top: 50px;
     max-width: 30em;
     background-color: $darker-bg-color;
     color: $light-font-color;
     padding: 15px 40px;
+    z-index: 1000;
 
     a {
       &, &:hover, &:visited, &:active, &:link {
