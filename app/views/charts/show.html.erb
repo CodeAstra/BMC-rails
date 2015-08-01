@@ -13,28 +13,35 @@
     <div class="col-xs-1"></div>
     <div class="col-xs-2 canvas-box" id="key-partnerships">
       <h4>Key Partnerships</h4>
+      <%= best_in_place @chart, :key_partnerships, :as => :textarea, nil: "Click here to start adding Key Partnerships", display_with: :simple_format, helper_options: {nil: "Yo"} %>
     </div>
     <div class="col-xs-2">
       <div id="key-activities" class="canvas-box">
         <h4>Key Activities</h4>
+        <%= best_in_place @chart, :key_activities, :as => :textarea, nil: "Click here to start adding Key Activities", display_with: :simple_format %>
       </div>
       <div id="key-resources" class="canvas-box">
         <h4>Key Resources</h4>
+        <%= best_in_place @chart, :key_resources, :as => :textarea, nil: "Click here to start adding Key Resources", display_with: :simple_format %>
       </div>
     </div>
     <div class="col-xs-2 canvas-box" id="value-propositions">
       <h4>Value Propositions</h4>
+      <%= best_in_place @chart, :value_propositions, :as => :textarea, nil: "Click here to start adding Value Propositions", display_with: :simple_format %>
     </div>
     <div class="col-xs-2">
       <div id="customer-relationships" class="canvas-box">
         <h4>Customer Relationships</h4>
+        <%= best_in_place @chart, :customer_relationships, :as => :textarea, nil: "Click here to start adding Customer Relationships", display_with: :simple_format %>
       </div>
       <div id="channels" class="canvas-box">
         <h4>Channels</h4>
+        <%= best_in_place @chart, :channels, :as => :textarea, nil: "Click here to start adding Channels", display_with: :simple_format %>
       </div>
     </div>
     <div class="col-xs-2 canvas-box" id="customer-segments">
       <h4>Customer Segments</h4>
+      <%= best_in_place @chart, :customer_segments, :as => :textarea, nil: "Click here to start adding Customer Segments", display_with: :simple_format %>
     </div>
     <div class="col-xs-1"></div>
   </div>
@@ -42,9 +49,11 @@
     <div class="col-xs-1"></div>
     <div class="col-xs-5 canvas-box" id="cost-structure">
       <h4>Cost Structure</h4>
+      <%= best_in_place @chart, :cost_structure, :as => :textarea, nil: "Click here to start adding Cost Structure", display_with: :simple_format %>
     </div>
     <div class="col-xs-5 canvas-box" id="revenue-streams">
       <h4>Revenue Streams</h4>
+      <%= best_in_place @chart, :revenue_streams, :as => :textarea, nil: "Click here to start adding Revenue Streams", display_with: :simple_format %>
     </div>
     <div class="col-xs-1"></div>
   </div>

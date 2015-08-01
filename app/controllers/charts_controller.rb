@@ -19,8 +19,28 @@ class ChartsController < ApplicationController
     @chart = current_user.charts.find(params[:id])
   end
 
+  def update
+    @chart = current_user.charts.find(params[:id])
+    @chart.update_attributes(chart_edit_params)
+    respond_with_bip(@chart)
+  end
+
 private
   def chart_params
     params.require(:chart).permit(:title, :description)
+  end
+
+  def chart_edit_params
+    params.require(:chart).permit(
+      :customer_segments, 
+      :value_propositions, 
+      :customer_relationships, 
+      :channels, 
+      :key_activities, 
+      :key_resources, 
+      :key_partnerships, 
+      :cost_structure, 
+      :revenue_streams
+    )
   end
 end

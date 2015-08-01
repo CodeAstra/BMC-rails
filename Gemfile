@@ -61,3 +61,5 @@ gem 'omniauth-linkedin'
 gem 'simple_form'
 gem 'jquery-turbolinks'
 gem 'cloudinary'
+gem 'best_in_place'
+
