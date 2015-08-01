@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hatjsylcn
+  api_key: '673126161529134'
+  api_secret: cNzFkVTJkRDqm1o2Fa_ELoY5UOU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hatjsylcn
+  api_key: '673126161529134'
+  api_secret: cNzFkVTJkRDqm1o2Fa_ELoY5UOU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hatjsylcn
+  api_key: '673126161529134'
+  api_secret: cNzFkVTJkRDqm1o2Fa_ELoY5UOU
+  enhance_image_tag: true
+  static_image_support: false
