@@ -3,6 +3,16 @@
     margin: 0 -15px;
   }
 
+  .canvas-box {
+    border: 1px solid transparent;
+    padding: 15px;
+
+    h4 {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
   #key-partnerships, #value-propositions, #customer-segments {
     height: 60vh;
   }
