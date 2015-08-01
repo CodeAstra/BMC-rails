@@ -12,9 +12,11 @@ class CreateCharts < ActiveRecord::Migration
       t.text :key_partnerships
       t.text :cost_structure
       t.text :revenue_streams
-      t.references :owner, index: true, foreign_key: true
+      t.references :owner, index: true
 
       t.timestamps null: false
     end
+
+    add_foreign_key :charts, :users, column: :owner_id
   end
 end
