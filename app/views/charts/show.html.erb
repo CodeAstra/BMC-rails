@@ -7,7 +7,7 @@
         <% if @chart_version %>
           <%= @chart_version.title %>
           <div class="version_details">
-            (<%= chart_version_title(@chart_version) %> - READ ONLY)
+            (<%= @chart_version.title_for_display %> - READ ONLY)
           </div>
         <% else %>
           <%= best_in_place @chart, :title %>

@@ -6,8 +6,4 @@ module ChartsHelper
       end +
       (chart_version ? link_to(fa_icon("pencil"), "#", class: "modal-trigger", data: {toggle: "modal", target: "##{col_name.to_s}-modal"}) : "")
   end
-
-  def chart_version_title(chart_version)
-    "V#{chart_version.counter} - #{chart_version.created_at.strftime('%b %e, %Y')}"
-  end
 end

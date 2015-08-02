@@ -2,11 +2,22 @@
 #
 # Table name: chart_versions
 #
-#  id         :integer          not null, primary key
-#  chart_id   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  counter    :integer
+#  id                     :integer          not null, primary key
+#  chart_id               :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  counter                :integer
+#  title                  :string
+#  description            :text
+#  customer_segments      :text
+#  value_propositions     :text
+#  customer_relationships :text
+#  channels               :text
+#  key_activities         :text
+#  key_resources          :text
+#  key_partnerships       :text
+#  cost_structure         :text
+#  revenue_streams        :text
 #
 
 class ChartVersion < ActiveRecord::Base
@@ -16,6 +27,11 @@ class ChartVersion < ActiveRecord::Base
                       uniqueness: {scope: :chart_id}
 
   before_validation :set_details
+  after_destroy :correct_counters_of_siblings
+
+  def title_for_display
+    "V#{self.counter} - #{self.created_at.strftime('%b %e, %Y')}"
+  end
 
 private
   def set_details
@@ -31,5 +47,11 @@ private
     self.cost_structure = self.chart.cost_structure
     self.revenue_streams = self.chart.revenue_streams
     self.counter = self.chart.versions.count + 1 if self.new_record?
+  end
+
+  def correct_counters_of_siblings
+    self.chart.versions.where('counter > ?', self.counter).each do |cv|
+      cv.update_attribute(:counter, cv.counter - 1)
+    end
   end
 end
