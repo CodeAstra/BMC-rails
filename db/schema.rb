@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802054044) do
+ActiveRecord::Schema.define(version: 20150802064504) do
 
   create_table "chart_versions", force: :cascade do |t|
     t.integer  "chart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "counter"
+    t.string   "title"
+    t.text     "description"
+    t.text     "customer_segments"
+    t.text     "value_propositions"
+    t.text     "customer_relationships"
+    t.text     "channels"
+    t.text     "key_activities"
+    t.text     "key_resources"
+    t.text     "key_partnerships"
+    t.text     "cost_structure"
+    t.text     "revenue_streams"
   end
 
   add_index "chart_versions", ["chart_id"], name: "index_chart_versions_on_chart_id"
