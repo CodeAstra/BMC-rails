@@ -6,6 +6,17 @@
   #title, #description {
     margin-left: -15px;
 
+    .edit_indicator {
+      font-size: 0.8em;
+      margin-left: -1.2em;
+      visibility: hidden;
+      color: lighten($dark-font-color, 10%);
+    }
+
+    &:hover .edit_indicator {
+      visibility: visible;
+    }
+
     .version_details {
       font-size: 0.5em;
       margin-top: 10px;
