@@ -1,0 +1,37 @@
+<div id="version_navigation" class="pull-right">
+  <% if !@chart_version && !@chart.versions.any? %>
+    <%# Viewing a live version of chart, which doesn't have any versions' %>
+    <%= link_to fa_icon("plus-circle", text: "Create Version"), versionalize_chart_path(@chart), method: :put, class: "btn btn-primary" %>
+  <% else %>
+    <div class="btn-group">
+      <% if @chart_version %>
+        <button type="button" class="btn btn-primary">
+          <%= chart_version_title(@chart_version) %>
+        </button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+      <% else %>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Choose Version <span class="caret"></span>
+        </button>
+      <% end %>
+      <ul class="dropdown-menu">
+        <li>
+          <% if @chart_version %>
+            <%= link_to "Live", chart_path(@chart) %>
+          <% else %>
+            <%= link_to fa_icon("plus-circle", text: "Create Version"), versionalize_chart_path(@chart), method: :put %>
+          <% end %>
+        </li>
+        <li role="separator" class="divider"></li>
+        <% @chart.versions.reverse.each do |chart_version| %>
+          <li>
+            <%= link_to "V#{chart_version.counter} - #{chart_version.created_at.strftime('%b %e, %Y')}", chart_path(@chart, v: chart_version.counter) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

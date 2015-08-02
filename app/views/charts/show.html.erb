@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
-      <%= link_to "Create Version", versionalize_chart_path(@chart), method: :put, remote: true, class: "btn btn-primary pull-right" %>
+      <%= render "charts/version_navigation" %>
       <h1 id="title">
         <% if @chart_version %>
           <%= @chart_version.title %>
           <div class="version_details">
-            (Version <%= @chart_version.counter %> - Created on <%= @chart_version.created_at.strftime("%b %e, %Y") %> - READ ONLY)
+            (<%= chart_version_title(@chart_version) %> - READ ONLY)
           </div>
         <% else %>
           <%= best_in_place @chart, :title %>

@@ -15,7 +15,7 @@
       <li><%= link_to "Home", root_path %></li>
       <% if @chart_version %>
         <li><%= link_to @chart.title, chart_path(@chart) %></li>
-        <li><%= "Version #{@chart_version.counter}" %></li>
+        <li><%= chart_version_title(@chart_version) %></li>
       <% else %>
         <li><%= @chart.title %></li>
       <% end %>

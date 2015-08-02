@@ -34,7 +34,7 @@ class ChartsController < ApplicationController
   def versionalize
     @chart.versionalize!
 
-    render nothing: true
+    redirect_to chart_path(@chart, v: @chart.versions.last.counter)
   end
 
 private
