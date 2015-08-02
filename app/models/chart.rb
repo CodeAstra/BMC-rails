@@ -21,7 +21,7 @@
 
 class Chart < ActiveRecord::Base
   belongs_to :owner, class_name: User.name
-  has_many :versions, class_name: ChartVersion.name
+  has_many :versions, class_name: ChartVersion.name, dependent: :destroy
 
   validates :title, presence: true
   validates :owner, presence: true
