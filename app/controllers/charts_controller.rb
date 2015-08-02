@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_chart, only: [:show, :update]
+  before_action :fetch_chart, only: [:show, :update, :versionalize]
 
   def index
     @charts = current_user.charts.all
@@ -26,6 +26,12 @@ class ChartsController < ApplicationController
       format.js { render 'update' }
       format.json { respond_with_bip(@chart) }
     end
+  end
+
+  def versionalize
+    @chart.versionalize!
+
+    render nothing: true
   end
 
 private

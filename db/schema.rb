@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731094511) do
+ActiveRecord::Schema.define(version: 20150802052210) do
+
+  create_table "chart_versions", force: :cascade do |t|
+    t.integer  "chart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chart_versions", ["chart_id"], name: "index_chart_versions_on_chart_id"
 
   create_table "charts", force: :cascade do |t|
     t.string   "title"

@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
+      <%= link_to "Create Version", versionalize_chart_path(@chart), method: :put, remote: true, class: "btn btn-primary pull-right" %>
       <h1 id="title"><%= best_in_place @chart, :title %></h1>
       <p id="description">
         <%= best_in_place @chart, :description, as: :textarea %>
