@@ -4,7 +4,7 @@ module ChartsHelper
       content_tag(:div, class: "content") do
         raw (chart_version || chart).send(col_name)
       end +
-      (chart_version ? link_to(fa_icon("pencil"), "#", class: "modal-trigger", data: {toggle: "modal", target: "##{col_name.to_s}-modal"}) : "")
+      (chart_version ? "" : link_to(fa_icon("pencil"), "#", class: "modal-trigger", data: {toggle: "modal", target: "##{col_name.to_s}-modal"}))
   end
 
   def chart_version_title(chart_version)
