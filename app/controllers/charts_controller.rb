@@ -17,6 +17,9 @@ class ChartsController < ApplicationController
   end
 
   def show
+    if params[:v]
+      @chart = @chart.versions[params[:v].to_i].reify
+    end
   end
 
   def update

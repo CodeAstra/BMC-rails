@@ -21,6 +21,7 @@
 
 class Chart < ActiveRecord::Base
   belongs_to :owner, class_name: User.name
+  has_paper_trail
 
   validates :title, presence: true
   validates :owner, presence: true
