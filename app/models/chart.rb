@@ -27,8 +27,6 @@ class Chart < ActiveRecord::Base
   validates :owner, presence: true
 
   def versionalize!
-    vs = self.versions.new
-    vs.counter = self.versions.count + 1
-    vs.save!
+    self.versions.create!
   end
 end

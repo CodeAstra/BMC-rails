@@ -14,4 +14,11 @@ class ChartVersion < ActiveRecord::Base
 
   validates :counter, presence: true, numericality: true,
                       uniqueness: {scope: :chart_id}
+
+  before_validation :set_counter
+
+private
+  def set_counter
+    self.counter = self.chart.versions.count + 1 if self.new_record?
+  end
 end
