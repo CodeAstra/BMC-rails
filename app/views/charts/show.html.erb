@@ -4,21 +4,21 @@
     <div class="col-xs-10">
       <%= render "charts/version_navigation" %>
       <h1 id="title">
-        <%= fa_icon "pencil", class: "edit_indicator" %>
         <% if @chart_version %>
           <%= @chart_version.title %>
           <div class="version_details">
             (<%= @chart_version.title_for_display %> - READ ONLY)
           </div>
         <% else %>
+          <%= fa_icon "pencil", class: "edit_indicator" %>
           <%= best_in_place @chart, :title %>
         <% end %>
       </h1>
       <p id="description">
-        <%= fa_icon "pencil", class: "edit_indicator" %>
         <% if @chart_version %>
           <%= @chart_version.description %>
         <% else %>
+          <%= fa_icon "pencil", class: "edit_indicator" %>
           <%= best_in_place @chart, :description, as: :textarea %>
         <% end %>
       </p>
