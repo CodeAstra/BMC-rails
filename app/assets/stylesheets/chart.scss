@@ -1,6 +1,11 @@
 #chart {
   #title, #description {
     margin-left: -15px;
+
+    .version_details {
+      font-size: 0.5em;
+      margin-top: 10px;
+    }
   }
 
   .canvas-box {

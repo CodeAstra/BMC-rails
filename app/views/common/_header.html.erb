@@ -13,7 +13,12 @@
   <ol class="breadcrumb">
     <% unless charts_index_page? %>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= @chart.title %></li>
+      <% if @chart_version %>
+        <li><%= link_to @chart.title, chart_path(@chart) %></li>
+        <li><%= "Version #{@chart_version.counter}" %></li>
+      <% else %>
+        <li><%= @chart.title %></li>
+      <% end %>
     <% end %>
   </ol>
 

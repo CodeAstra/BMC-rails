@@ -3,9 +3,22 @@
     <div class="col-xs-1"></div>
     <div class="col-xs-10">
       <%= link_to "Create Version", versionalize_chart_path(@chart), method: :put, remote: true, class: "btn btn-primary pull-right" %>
-      <h1 id="title"><%= best_in_place @chart, :title %></h1>
+      <h1 id="title">
+        <% if @chart_version %>
+          <%= @chart_version.title %>
+          <div class="version_details">
+            (Version <%= @chart_version.counter %> - Created on <%= @chart_version.created_at.strftime("%b %e, %Y") %> - READ ONLY)
+          </div>
+        <% else %>
+          <%= best_in_place @chart, :title %>
+        <% end %>
+      </h1>
       <p id="description">
-        <%= best_in_place @chart, :description, as: :textarea %>
+        <% if @chart_version %>
+          <%= @chart_version.description %>
+        <% else %>
+          <%= best_in_place @chart, :description, as: :textarea %>
+        <% end %>
       </p>
     </div>
     <div class="col-xs-1"></div>
@@ -14,42 +27,42 @@
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-2 canvas-box" id="key_partnerships">
-      <%= chart_cell_content(@chart, :key_partnerships) %>
+      <%= chart_cell_content(@chart, @chart_version, :key_partnerships) %>
     </div>
     <div class="col-xs-2">
       <div id="key_activities" class="canvas-box">
-        <%= chart_cell_content(@chart, :key_activities) %>
+        <%= chart_cell_content(@chart, @chart_version, :key_activities) %>
       </div>
       <div id="key_resources" class="canvas-box">
-        <%= chart_cell_content(@chart, :key_resources) %>
+        <%= chart_cell_content(@chart, @chart_version, :key_resources) %>
       </div>
     </div>
     <div class="col-xs-2 canvas-box" id="value_propositions">
-      <%= chart_cell_content(@chart, :value_propositions) %>
+      <%= chart_cell_content(@chart, @chart_version, :value_propositions) %>
     </div>
     <div class="col-xs-2">
       <div id="customer_relationships" class="canvas-box">
-        <%= chart_cell_content(@chart, :customer_relationships) %>
+        <%= chart_cell_content(@chart, @chart_version, :customer_relationships) %>
       </div>
       <div id="channels" class="canvas-box">
-        <%= chart_cell_content(@chart, :channels) %>
+        <%= chart_cell_content(@chart, @chart_version, :channels) %>
       </div>
     </div>
     <div class="col-xs-2 canvas-box" id="customer_segments">
-      <%= chart_cell_content(@chart, :customer_segments) %>
+      <%= chart_cell_content(@chart, @chart_version, :customer_segments) %>
     </div>
     <div class="col-xs-1"></div>
   </div>
   <div class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-5 canvas-box" id="cost_structure">
-      <%= chart_cell_content(@chart, :cost_structure) %>
+      <%= chart_cell_content(@chart, @chart_version, :cost_structure) %>
     </div>
     <div class="col-xs-5 canvas-box" id="revenue_streams">
-      <%= chart_cell_content(@chart, :revenue_streams) %>
+      <%= chart_cell_content(@chart, @chart_version, :revenue_streams) %>
     </div>
     <div class="col-xs-1"></div>
   </div>
 
-  <%= render "charts/edit_modals" %>
+  <%= render "charts/edit_modals" unless @chart_version %>
 </div>

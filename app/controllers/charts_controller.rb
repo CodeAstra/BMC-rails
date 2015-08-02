@@ -17,6 +17,9 @@ class ChartsController < ApplicationController
   end
 
   def show
+    if params[:v]
+      @chart_version = @chart.versions.where(counter: params[:v].to_i).first
+    end
   end
 
   def update
