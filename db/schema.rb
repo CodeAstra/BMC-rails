@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802064504) do
+ActiveRecord::Schema.define(version: 20150810123804) do
+
+  create_table "chart_subscriptions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "chart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chart_subscriptions", ["chart_id"], name: "index_chart_subscriptions_on_chart_id"
+  add_index "chart_subscriptions", ["user_id"], name: "index_chart_subscriptions_on_user_id"
 
   create_table "chart_versions", force: :cascade do |t|
     t.integer  "chart_id"

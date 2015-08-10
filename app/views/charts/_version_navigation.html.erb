@@ -64,6 +64,14 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for @chart, url: share_chart_path(@chart), method: :put do |f| %>
+          <p>
+            Current shared with:
+            <ul>
+              <% @chart.users.each do |user| %>
+                <li><%= user.name %></li>
+              <% end %>
+            </ul>
+          </p>
           <p>Please enter comma separated list of emails to share with.</p>
           <%= f.input :invite_emails, as: :text, label: false %>
           <%= f.submit "Share", class: "btn btn-primary" %>

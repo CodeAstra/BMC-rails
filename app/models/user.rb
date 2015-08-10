@@ -25,7 +25,9 @@ class User < ActiveRecord::Base
   #        :recoverable, :rememberable, :trackable, :validatable
   devise :rememberable, :trackable, :omniauthable, :omniauth_providers => [:linkedin]
 
-  has_many :charts, foreign_key: :owner_id
+  has_many :authored_charts, class_name: Chart.name, foreign_key: :owner_id
+  has_many :chart_subscriptions
+  has_many :charts, through: :chart_subscriptions
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

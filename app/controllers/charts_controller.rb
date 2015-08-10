@@ -8,11 +8,11 @@ class ChartsController < ApplicationController
   end
 
   def create
-    @chart = current_user.charts.new(chart_params)
+    @chart = current_user.authored_charts.new(chart_params)
     if @chart.save
       redirect_to chart_path(@chart)
     else
-      redirect_to root_path, alert: "Something went wrong. Please try again"
+      redirect_to root_path, alert: "#{@chart.errors.full_messages.join(", ")}. Please try again"
     end
   end
 
