@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :charts do
     member do
       put 'versionalize'
+      put 'share'
     end
     resources :chart_versions
   end

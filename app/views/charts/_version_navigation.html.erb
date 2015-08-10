@@ -41,6 +41,9 @@
     </button>
     <ul class="dropdown-menu dropdown-menu-right">
       <li>
+          <%= link_to fa_icon("share", text: "Share"), "#", id: "share-link-trigger" %>
+      </li>
+      <li>
         <% if @chart_version %>
           <%= link_to fa_icon("trash", text: "Delete #{@chart_version.title_for_display}"), chart_chart_version_path(@chart, @chart_version), method: :delete, data: {confirm: "#{@chart_version.title_for_display} of #{@chart.title} will be deleted. The titles of other versions of #{@chart.title} will be modified to preserve the ordering.\nAre you sure you want to delete #{@chart_version.title_for_display}?"} %>
         <% else %>
@@ -51,3 +54,21 @@
     </ul>
   </div>
 </div>
+
+<div id="share-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Share Model</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @chart, url: share_chart_path(@chart), method: :put do |f| %>
+          <p>Please enter comma separated list of emails to share with.</p>
+          <%= f.input :invite_emails, as: :text, label: false %>
+          <%= f.submit "Share", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

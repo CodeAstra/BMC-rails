@@ -11,3 +11,8 @@ $ ->
     $(@.dataset.target)[0].click()
 
   $(".best_in_place").best_in_place()
+
+  $("#share-link-trigger").click (ev) ->
+    ev.preventDefault()
+    $('#share-modal').modal('show')
+    false

@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_chart, only: [:show, :update, :destroy, :versionalize]
+  before_action :fetch_chart, only: [:show, :update, :destroy, :versionalize, :share]
 
   def index
     @charts = current_user.charts.all
@@ -28,6 +28,29 @@ class ChartsController < ApplicationController
     respond_to do |format|
       format.js { render 'update' }
       format.json { respond_with_bip(@chart) }
+    end
+  end
+
+  def share
+    emails = params[:chart][:invite_emails]
+    emails.gsub!(" ", "")
+    emails = emails.split(",")
+    ignored_emails = []
+    emails.reject!(&:blank?)
+    emails.uniq!
+    emails.each do |email|
+      usr = User.find_by(email: email)
+      if usr
+        @chart.share_with(usr)
+      else
+        ignored_emails.push(email)
+      end
+    end
+
+    if ignored_emails.any?
+      redirect_to chart_path(@chart), alert: "The following emails are not associated with any user; Hence, not share with them: #{ignored_emails.join(', ')}."
+    else
+      redirect_to chart_path(@chart), notice: "Successfully shared with #{emails.count} users."
     end
   end
 

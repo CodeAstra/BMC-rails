@@ -20,6 +20,8 @@
 #
 
 class Chart < ActiveRecord::Base
+  attr_accessor :invite_emails
+
   belongs_to :owner, class_name: User.name
   has_many :versions, class_name: ChartVersion.name, dependent: :destroy
 
@@ -28,5 +30,9 @@ class Chart < ActiveRecord::Base
 
   def versionalize!
     self.versions.create!
+  end
+
+  def share_with(usr)
+    
   end
 end
