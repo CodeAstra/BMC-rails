@@ -27,6 +27,7 @@
     border: 1px solid transparent;
     padding: 15px;
     position: relative;
+    overflow-y: auto;
 
     * {
       margin: 0 0 0 0;
@@ -62,6 +63,21 @@
 
     ol, ul {
       padding-left: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+      border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 6px;
+      -webkit-box-shadow: none;
     }
   }
 
