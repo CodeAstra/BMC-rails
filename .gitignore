@@ -17,3 +17,4 @@
 /tmp
 .env
 .cloudinary.static.trash
+.tags
