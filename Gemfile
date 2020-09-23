@@ -49,7 +49,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -57,7 +57,7 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'omniauth-linkedin'
+gem 'omniauth-linkedin-oauth2'
 gem 'simple_form'
 gem 'jquery-turbolinks'
 gem 'cloudinary'
