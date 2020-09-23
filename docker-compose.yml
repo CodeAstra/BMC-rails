@@ -1,0 +1,15 @@
+version: "3.0"
+
+volumes:
+  bundle_cache:
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/application:cached
+      - bundle_cache:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
